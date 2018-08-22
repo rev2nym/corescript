@@ -194,6 +194,10 @@ DataManager.isArmor = function(item) {
     return item && $dataArmors.contains(item);
 };
 
+DataManager.createGameSystem = function() {
+    $gameSystem = new Game_System();
+};
+
 DataManager.createGameObjects = function() {
     $gameTemp          = new Game_Temp();
     $gameSystem        = new Game_System();
@@ -208,6 +212,12 @@ DataManager.createGameObjects = function() {
     $gameTroop         = new Game_Troop();
     $gameMap           = new Game_Map();
     $gamePlayer        = new Game_Player();
+};
+
+DataManager.setupTitle = function() {
+    this.createGameSystem();
+    this.selectSavefileForNewGame();
+    Graphics.frameCount = 0;
 };
 
 DataManager.setupNewGame = function() {

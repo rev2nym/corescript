@@ -69,7 +69,7 @@ Scene_Boot.prototype.start = function() {
         SceneManager.goto(Scene_Map);
     } else {
         this.checkPlayerLocation();
-        DataManager.setupNewGame();
+        DataManager.setupTitle();
         SceneManager.goto(Scene_Title);
         Window_TitleCommand.initCommandPosition();
     }
