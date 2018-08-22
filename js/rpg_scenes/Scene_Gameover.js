@@ -7,21 +7,21 @@ function Scene_Gameover() {
     this.initialize.apply(this, arguments);
 }
 
-Scene_Gameover.prototype = Object.create(Scene_Base.prototype);
+Scene_Gameover.prototype = Object.create(Scene_GameBase.prototype);
 Scene_Gameover.prototype.constructor = Scene_Gameover;
 
 Scene_Gameover.prototype.initialize = function() {
-    Scene_Base.prototype.initialize.call(this);
+    Scene_GameBase.prototype.initialize.call(this);
 };
 
 Scene_Gameover.prototype.create = function() {
-    Scene_Base.prototype.create.call(this);
+    Scene_GameBase.prototype.create.call(this);
     this.playGameoverMusic();
     this.createBackground();
 };
 
 Scene_Gameover.prototype.start = function() {
-    Scene_Base.prototype.start.call(this);
+    Scene_GameBase.prototype.start.call(this);
     this.startFadeIn(this.slowFadeSpeed(), false);
 };
 
@@ -29,16 +29,16 @@ Scene_Gameover.prototype.update = function() {
     if (this.isActive() && !this.isBusy() && this.isTriggered()) {
         this.gotoTitle();
     }
-    Scene_Base.prototype.update.call(this);
+    Scene_GameBase.prototype.update.call(this);
 };
 
 Scene_Gameover.prototype.stop = function() {
-    Scene_Base.prototype.stop.call(this);
+    Scene_GameBase.prototype.stop.call(this);
     this.fadeOutAll();
 };
 
 Scene_Gameover.prototype.terminate = function() {
-    Scene_Base.prototype.terminate.call(this);
+    Scene_GameBase.prototype.terminate.call(this);
     AudioManager.stopAll();
 };
 

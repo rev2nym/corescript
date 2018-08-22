@@ -7,20 +7,20 @@ function Scene_Battle() {
     this.initialize.apply(this, arguments);
 }
 
-Scene_Battle.prototype = Object.create(Scene_Base.prototype);
+Scene_Battle.prototype = Object.create(Scene_GameBase.prototype);
 Scene_Battle.prototype.constructor = Scene_Battle;
 
 Scene_Battle.prototype.initialize = function() {
-    Scene_Base.prototype.initialize.call(this);
+    Scene_GameBase.prototype.initialize.call(this);
 };
 
 Scene_Battle.prototype.create = function() {
-    Scene_Base.prototype.create.call(this);
+    Scene_GameBase.prototype.create.call(this);
     this.createDisplayObjects();
 };
 
 Scene_Battle.prototype.start = function() {
-    Scene_Base.prototype.start.call(this);
+    Scene_GameBase.prototype.start.call(this);
     this.startFadeIn(this.fadeSpeed(), false);
     BattleManager.playBattleBgm();
     BattleManager.startBattle();
@@ -35,7 +35,7 @@ Scene_Battle.prototype.update = function() {
     if (active && !this.isBusy()) {
         this.updateBattleProcess();
     }
-    Scene_Base.prototype.update.call(this);
+    Scene_GameBase.prototype.update.call(this);
 };
 
 Scene_Battle.prototype.updateBattleProcess = function() {
@@ -68,7 +68,7 @@ Scene_Battle.prototype.changeInputWindow = function() {
 };
 
 Scene_Battle.prototype.stop = function() {
-    Scene_Base.prototype.stop.call(this);
+    Scene_GameBase.prototype.stop.call(this);
     if (this.needsSlowFadeOut()) {
         this.startFadeOut(this.slowFadeSpeed(), false);
     } else {
@@ -80,7 +80,7 @@ Scene_Battle.prototype.stop = function() {
 };
 
 Scene_Battle.prototype.terminate = function() {
-    Scene_Base.prototype.terminate.call(this);
+    Scene_GameBase.prototype.terminate.call(this);
     $gameParty.onBattleEnd();
     $gameTroop.onBattleEnd();
     AudioManager.stopMe();

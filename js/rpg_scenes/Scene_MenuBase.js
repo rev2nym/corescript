@@ -7,15 +7,15 @@ function Scene_MenuBase() {
     this.initialize.apply(this, arguments);
 }
 
-Scene_MenuBase.prototype = Object.create(Scene_Base.prototype);
+Scene_MenuBase.prototype = Object.create(Scene_GameBase.prototype);
 Scene_MenuBase.prototype.constructor = Scene_MenuBase;
 
 Scene_MenuBase.prototype.initialize = function() {
-    Scene_Base.prototype.initialize.call(this);
+    Scene_GameBase.prototype.initialize.call(this);
 };
 
 Scene_MenuBase.prototype.create = function() {
-    Scene_Base.prototype.create.call(this);
+    Scene_GameBase.prototype.create.call(this);
     this.createBackground();
     this.createWindowLayer();
 };

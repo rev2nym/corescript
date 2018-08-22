@@ -7,11 +7,11 @@ function Scene_Map() {
     this.initialize.apply(this, arguments);
 }
 
-Scene_Map.prototype = Object.create(Scene_Base.prototype);
+Scene_Map.prototype = Object.create(Scene_GameBase.prototype);
 Scene_Map.prototype.constructor = Scene_Map;
 
 Scene_Map.prototype.initialize = function() {
-    Scene_Base.prototype.initialize.call(this);
+    Scene_GameBase.prototype.initialize.call(this);
     this._waitCount = 0;
     this._encounterEffectDuration = 0;
     this._mapLoaded = false;
@@ -19,7 +19,7 @@ Scene_Map.prototype.initialize = function() {
 };
 
 Scene_Map.prototype.create = function() {
-    Scene_Base.prototype.create.call(this);
+    Scene_GameBase.prototype.create.call(this);
     this._transfer = $gamePlayer.isTransferring();
     var mapId = this._transfer ? $gamePlayer.newMapId() : $gameMap.mapId();
     DataManager.loadMapData(mapId);
@@ -30,7 +30,7 @@ Scene_Map.prototype.isReady = function() {
         this.onMapLoaded();
         this._mapLoaded = true;
     }
-    return this._mapLoaded && Scene_Base.prototype.isReady.call(this);
+    return this._mapLoaded && Scene_GameBase.prototype.isReady.call(this);
 };
 
 Scene_Map.prototype.onMapLoaded = function() {
@@ -41,7 +41,7 @@ Scene_Map.prototype.onMapLoaded = function() {
 };
 
 Scene_Map.prototype.start = function() {
-    Scene_Base.prototype.start.call(this);
+    Scene_GameBase.prototype.start.call(this);
     SceneManager.clearStack();
     if (this._transfer) {
         this.fadeInForTransfer();
@@ -62,7 +62,7 @@ Scene_Map.prototype.update = function() {
         this.updateEncounterEffect();
     }
     this.updateWaitCount();
-    Scene_Base.prototype.update.call(this);
+    Scene_GameBase.prototype.update.call(this);
 };
 
 Scene_Map.prototype.updateMainMultiply = function() {
@@ -86,7 +86,7 @@ Scene_Map.prototype.isFastForward = function() {
 };
 
 Scene_Map.prototype.stop = function() {
-    Scene_Base.prototype.stop.call(this);
+    Scene_GameBase.prototype.stop.call(this);
     $gamePlayer.straighten();
     this._mapNameWindow.close();
     if (this.needsSlowFadeOut()) {
@@ -101,11 +101,11 @@ Scene_Map.prototype.stop = function() {
 Scene_Map.prototype.isBusy = function() {
     return ((this._messageWindow && this._messageWindow.isClosing()) ||
             this._waitCount > 0 || this._encounterEffectDuration > 0 ||
-            Scene_Base.prototype.isBusy.call(this));
+            Scene_GameBase.prototype.isBusy.call(this));
 };
 
 Scene_Map.prototype.terminate = function() {
-    Scene_Base.prototype.terminate.call(this);
+    Scene_GameBase.prototype.terminate.call(this);
     if (!SceneManager.isNextScene(Scene_Battle)) {
         this._spriteset.update();
         this._mapNameWindow.hide();
