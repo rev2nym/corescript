@@ -15,6 +15,7 @@ Scene_Title.prototype.initialize = function() {
 };
 
 Scene_Title.prototype.create = function() {
+    DataManager.setupTitle();
     Scene_Base.prototype.create.call(this);
     this.createBackground();
     this.createForeground();
@@ -23,6 +24,7 @@ Scene_Title.prototype.create = function() {
 };
 
 Scene_Title.prototype.start = function() {
+    Window_TitleCommand.initCommandPosition();
     Scene_Base.prototype.start.call(this);
     SceneManager.clearStack();
     this.centerSprite(this._backSprite1);
