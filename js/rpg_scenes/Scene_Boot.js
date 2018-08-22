@@ -63,8 +63,7 @@ Scene_Boot.prototype.start = function() {
     SoundManager.preloadImportantSounds();
     this.updateDocumentTitle();
     if (DataManager.isBattleTest()) {
-        DataManager.setupBattleTest();
-        SceneManager.goto(Scene_Battle);
+        SceneManager.goto(Scene_BattleTest);
     } else if (DataManager.isEventTest()) {
         SceneManager.goto(Scene_EventTest);
     } else {

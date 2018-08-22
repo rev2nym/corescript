@@ -23,5 +23,6 @@
   "js/rpg_scenes/Scene_Name.js",
   "js/rpg_scenes/Scene_Debug.js",
   "js/rpg_scenes/Scene_Battle.js",
+  "js/rpg_scenes/Scene_BattleTest.js",
   "js/rpg_scenes/Scene_Gameover.js"
 ]
