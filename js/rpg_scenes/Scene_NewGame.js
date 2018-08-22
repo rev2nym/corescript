@@ -14,9 +14,9 @@ Scene_NewGame.prototype.initialize = function() {
     Scene_Base.prototype.initialize.call(this);
 };
 
-Scene_NewGame.prototype.start = function() {
-    Scene_Base.prototype.start.call(this);
+Scene_NewGame.prototype.create = function() {
     DataManager.setupNewGame();
+    Scene_Base.prototype.create.call(this);
 };
 
 Scene_NewGame.prototype.update = function() {
