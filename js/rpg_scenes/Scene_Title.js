@@ -89,10 +89,9 @@ Scene_Title.prototype.createCommandWindow = function() {
 };
 
 Scene_Title.prototype.commandNewGame = function() {
-    DataManager.setupNewGame();
     this._commandWindow.close();
     this.fadeOutAll();
-    SceneManager.goto(Scene_Map);
+    SceneManager.goto(Scene_NewGame);
 };
 
 Scene_Title.prototype.commandContinue = function() {
