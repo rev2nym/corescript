@@ -21,5 +21,12 @@ Scene_NewGame.prototype.start = function() {
 
 Scene_NewGame.prototype.update = function() {
     Scene_Base.prototype.update.call(this);
+    this.checkPlayerLocation();
     SceneManager.goto(Scene_Map);
+};
+
+Scene_NewGame.prototype.checkPlayerLocation = function() {
+    if ($dataSystem.startMapId === 0) {
+        throw new Error('Player\'s starting position is not set');
+    }
 };

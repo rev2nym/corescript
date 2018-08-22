@@ -68,7 +68,6 @@ Scene_Boot.prototype.start = function() {
         DataManager.setupEventTest();
         SceneManager.goto(Scene_Map);
     } else {
-        this.checkPlayerLocation();
         SceneManager.goto(Scene_Title);
     }
     this.updateDocumentTitle();
@@ -76,10 +75,4 @@ Scene_Boot.prototype.start = function() {
 
 Scene_Boot.prototype.updateDocumentTitle = function() {
     document.title = $dataSystem.gameTitle;
-};
-
-Scene_Boot.prototype.checkPlayerLocation = function() {
-    if ($dataSystem.startMapId === 0) {
-        throw new Error('Player\'s starting position is not set');
-    }
 };
