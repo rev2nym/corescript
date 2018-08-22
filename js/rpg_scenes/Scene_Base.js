@@ -105,7 +105,7 @@ Scene_Base.prototype.start = function() {
  * @memberof Scene_Base
  */
 Scene_Base.prototype.update = function() {
-    $gameSystem.onFrameUpdate();
+    $gameSystem.update();
     this.updateFade();
     this.updateChildren();
 };

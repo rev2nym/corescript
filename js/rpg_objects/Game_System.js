@@ -157,6 +157,10 @@ Game_System.prototype.setDefeatMe = function(value) {
     this._defeatMe = value;
 };
 
+Game_System.prototype.update = function() {
+    this._frameCount++;
+};
+
 Game_System.prototype.onBattleStart = function() {
     this._battleCount++;
 };
@@ -167,10 +171,6 @@ Game_System.prototype.onBattleWin = function() {
 
 Game_System.prototype.onBattleEscape = function() {
     this._escapeCount++;
-};
-
-Game_System.prototype.onFrameUpdate = function() {
-    this._frameCount++;
 };
 
 Game_System.prototype.onBeforeSave = function() {
