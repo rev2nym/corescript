@@ -17,7 +17,6 @@ Scene_MenuBase.prototype.initialize = function() {
 Scene_MenuBase.prototype.create = function() {
     Scene_Base.prototype.create.call(this);
     this.createBackground();
-    this.updateActor();
     this.createWindowLayer();
 };
 
