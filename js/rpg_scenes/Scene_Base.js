@@ -273,19 +273,6 @@ Scene_Base.prototype.popScene = function() {
 };
 
 /**
- * Check whether the game should be triggering a gameover.
- * 
- * @method checkGameover
- * @instance 
- * @memberof Scene_Base
- */
-Scene_Base.prototype.checkGameover = function() {
-    if ($gameParty.isAllDead()) {
-        SceneManager.goto(Scene_Gameover);
-    }
-};
-
-/**
  * Slowly fade out all the visual and audio of the scene.
  * 
  * @method fadeOutAll

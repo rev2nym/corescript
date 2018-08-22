@@ -18,3 +18,16 @@ Scene_GameBase.prototype.update = function() {
     $gameSystem.update();
     Scene_Base.prototype.update.call(this);
 };
+
+/**
+ * Check whether the game should be triggering a gameover.
+ * 
+ * @method checkGameover
+ * @instance 
+ * @memberof Scene_GameBase
+ */
+Scene_GameBase.prototype.checkGameover = function() {
+    if ($gameParty.isAllDead()) {
+        SceneManager.goto(Scene_Gameover);
+    }
+};
