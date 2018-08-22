@@ -61,16 +61,15 @@ Scene_Boot.prototype.isGameFontLoaded = function() {
 Scene_Boot.prototype.start = function() {
     Scene_Base.prototype.start.call(this);
     SoundManager.preloadImportantSounds();
+    this.updateDocumentTitle();
     if (DataManager.isBattleTest()) {
         DataManager.setupBattleTest();
         SceneManager.goto(Scene_Battle);
     } else if (DataManager.isEventTest()) {
-        DataManager.setupEventTest();
-        SceneManager.goto(Scene_Map);
+        SceneManager.goto(Scene_EventTest);
     } else {
         SceneManager.goto(Scene_Title);
     }
-    this.updateDocumentTitle();
 };
 
 Scene_Boot.prototype.updateDocumentTitle = function() {

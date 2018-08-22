@@ -6,6 +6,7 @@
   "js/rpg_scenes/Scene_GameBase.js",
   "js/rpg_scenes/Scene_Title.js",
   "js/rpg_scenes/Scene_Map.js",
+  "js/rpg_scenes/Scene_EventTest.js",
   "js/rpg_scenes/Scene_MenuBase.js",
   "js/rpg_scenes/Scene_Menu.js",
   "js/rpg_scenes/Scene_ItemBase.js",
